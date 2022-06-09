@@ -32,7 +32,7 @@ if (window.innerHeight > window.innerWidth) {
 
 var pointer;
 
-var state = 1;
+var state = 4;
 
 function preload() {
   dm_sans = loadFont('assets/fonts/DMSans-Bold.ttf');
@@ -80,32 +80,6 @@ function draw() {
     anim4_3d();
   }
 
-  textSize(1.2*rem);
-  textFont(dm_sans)
-
-  push();
-  translate(0,0,-500);
-  var text1 = "FROM ABSTRACTNESS\nTO CONCRETENESS";
-  if (window.innerHeight > window.innerWidth) {
-    var text2 = "EXPERIENTIAL KNOWLEDGE\nAND ROLE OF PROTOTYPES\nIN DESIGN RESEARCH";
-    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE");
-    var height2 = 5*rem + padding;
-  }else {
-    var text2 = "EXPERIENTIAL KNOWLEDGE AND ROLE\nOF PROTOTYPES IN DESIGN RESEARCH";
-    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE AND ROLE");
-    var height2 = 4*rem + padding*2;
-  }
-  var text1Width = textWidth("FROM ABSTRACTNESS");
-  noStroke();
-  fill("#f2f2f2")
-  rect(-width/2, -height/2 + padding,text1Width + padding*2, 4*rem + padding)
-  rect(width/2 - text2Width - padding*2, height/2 - height2, text2Width + padding*2, height2)
-  fill('#323232')
-  textAlign(LEFT, TOP);
-  text(text1,-width/2 + padding,-height/2 + padding*2)
-  textAlign(RIGHT, BOTTOM);
-  text(text2, width/2 - padding, height/2 - padding*2)
-  pop();
 
 }
 
@@ -127,6 +101,9 @@ function anim1_grid() {
 
     grid[i].display();
   }
+
+  subtitle();
+
   if (frameCount*20 > 300 + (step+stepX)*20) {
     frameCount = 0;
     state = 2;
@@ -153,6 +130,8 @@ function anim2_points() {
     ellipse(selectedPoints[i].x, selectedPoints[i].y, size)
   }
 
+  subtitle();
+
   if (frameCount*15 > i*100 + 100) {
     frameCount = 0;
     state = 3;
@@ -168,6 +147,8 @@ function anim3_lines() {
     noStroke();
     grid[i].display();
   }
+
+  subtitle();
 
   for (var i = 0; i < selectedPoints.length; i++) {
     fill(0, 0, 255)
@@ -204,6 +185,7 @@ function anim3_lines() {
     strokeWeight(lineThickness)
     line(x1, y1, posX, posY)
   }
+
   if (frameCount > 70) {
     frameCount = 0;
     state = 4;
@@ -222,6 +204,8 @@ function anim4_3d() {
     grid[i].display();
     pop();
   }
+
+  subtitle();
 
   push()
   let locX = mouseX - width / 2;
@@ -274,9 +258,8 @@ function anim4_3d() {
     }
   }
   endShape(CLOSE)
-
-
   pop()
+
 }
 
 // _______________________________________________ window resize not suitable for mobile
@@ -416,6 +399,37 @@ function createGrid() {
   }
 
   makeShape();
+}
+
+// _____________________________________________________ DRAW SUBTITLE FUNCTION
+
+function subtitle() {
+  textSize(1.2*rem);
+  textFont(dm_sans);
+
+  push();
+  translate(0,0,-500);
+  var text1 = "FROM ABSTRACTNESS\nTO CONCRETENESS";
+  if (window.innerHeight > window.innerWidth) {
+    var text2 = "EXPERIENTIAL KNOWLEDGE\nAND ROLE OF PROTOTYPES\nIN DESIGN RESEARCH";
+    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE");
+    var height2 = 5*rem + padding;
+  }else {
+    var text2 = "EXPERIENTIAL KNOWLEDGE AND ROLE\nOF PROTOTYPES IN DESIGN RESEARCH";
+    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE AND ROLE");
+    var height2 = 4*rem + padding*2;
+  }
+  var text1Width = textWidth("FROM ABSTRACTNESS");
+  noStroke();
+  fill("#f2f2f2")
+  rect(-width/2, -height/2 + padding,text1Width + padding*2, 4*rem + padding)
+  rect(width/2 - text2Width - padding*2, height/2 - height2, text2Width + padding*2, height2)
+  fill('#323232')
+  textAlign(LEFT, TOP);
+  text(text1,-width/2 + padding,-height/2 + padding*2)
+  textAlign(RIGHT, BOTTOM);
+  text(text2, width/2 - padding, height/2 - padding*2)
+  pop();
 }
 
 ///////////////////////////////////////////////////////////////////// POINT CLASS
