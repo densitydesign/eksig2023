@@ -32,7 +32,7 @@ if (window.innerHeight > window.innerWidth) {
 
 var pointer;
 
-var state = 4;
+var state = 1;
 
 function preload() {
   dm_sans = loadFont('assets/fonts/DMSans-Bold.ttf');
