@@ -11,6 +11,15 @@ body{
   color: var(--text);
 }
 
+#loader{
+  height: 100vh;
+  background-color: var(--bg);
+  position: fixed;
+  z-index: 2;
+  opacity: 1;
+  transition: .3s;
+}
+
 h1{
   font-size: 5vw;
   font-weight: 700;

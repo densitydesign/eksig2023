@@ -1,5 +1,13 @@
 jQuery(document).ready(function($) {
 
+  // remove the loader div
+  setTimeout(function() {
+    $('#loader').css('opacity', '0');
+    setTimeout(function() {
+      $('#loader').css('display', 'none');
+    }, 300);
+  }, 100);
+
   // When the user scrolls down, hide the menu. When the user scrolls up, show the menu
   var prevScrollpos = window.pageYOffset;
   window.onscroll = function() {
