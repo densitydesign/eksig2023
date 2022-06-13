@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.12,
+* Autoprefixer: v10.4.4
+* Browsers: last 4 version
+*/
+
 
 :root {
   --bg: #f2f2f2;
@@ -17,13 +24,17 @@ body{
   position: fixed;
   z-index: 2;
   opacity: 1;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
 h1{
   font-size: 5vw;
   font-weight: 700;
-  transform: translateX(-.2rem); /* optical adjustment */
+  -webkit-transform: translateX(-.2rem);
+      -ms-transform: translateX(-.2rem);
+          transform: translateX(-.2rem); /* optical adjustment */
 }
 
 h1 a, h1 a :hover{
@@ -86,10 +97,18 @@ p{
   right: 0;
   height: 100vh;
   padding: 1.5vw .5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
 }
 
 #subtitle p{
@@ -99,15 +118,29 @@ p{
 }
 
 #subtitle div{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .keynote-speaker{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
 }
 
 .keynote-speaker img{
@@ -123,10 +156,18 @@ p{
 }
 
 .caption{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin: .3rem 0 1.5rem 0;
 }
 
@@ -136,9 +177,15 @@ p{
 
 .organiser{
   margin-bottom: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .organiser p{
@@ -148,9 +195,16 @@ p{
 #footer{
   min-height: 30rem;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 #footer p{
@@ -160,13 +214,24 @@ p{
 /*_____________________________________________________ MENU*/
 
 #menu{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   height: 100vh;
   position: fixed;
   padding: .6rem 1rem 1rem 1.2rem;
+
+  -webkit-transition: .5s;
+
+  -o-transition: .5s;
 
   transition: .5s;
   z-index: 2;
@@ -178,13 +243,19 @@ p{
 
 #menuSections{
   overflow-y: hidden;
+  -webkit-transition: .5s;
+  -o-transition: .5s;
   transition: .5s;
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   margin-top: 2rem;
 }
 
 .nav{
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   --bs-nav-link-padding-x: 0;
   --bs-nav-link-padding-y: 0;
   --bs-nav-link-color: var(--text);
@@ -194,37 +265,60 @@ p{
 .nav-link{
   font-size: 1.3rem;
   font-weight: 700;
-  transform: translateX(-1rem);
+  -webkit-transform: translateX(-1rem);
+      -ms-transform: translateX(-1rem);
+          transform: translateX(-1rem);
+  -webkit-transition: .3s;
+  -o-transition: .3s;
   transition: .3s;
 }
 
 .nav-link:hover{
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .active{
-  transform: translateX(0);
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
   color: var(--accent)
 }
 
 #place-date{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-size: 1.3rem;
   font-weight: 700;
 }
 
 #loghi{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 1rem;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #loghi div{
   width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: .3rem;
 }
 
@@ -234,16 +328,27 @@ p{
 
 #loghi-footer{
   display: none;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-bottom: 1rem;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 #loghi-footer div{
   width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: .3rem;
 }
 
@@ -256,13 +361,21 @@ p{
   }
 
   #loghi-footer{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
   #header{
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     margin-bottom: -0.5rem;
   }
 
@@ -302,11 +415,15 @@ p{
 
     background: var(--text);
     border-radius: 3px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
     transition: .3s;
   }
 
   #menuToggler.is-active span:nth-child(1){
-    transform: translateY(3vw) rotate(45deg);
+    -webkit-transform: translateY(3vw) rotate(45deg);
+        -ms-transform: translateY(3vw) rotate(45deg);
+            transform: translateY(3vw) rotate(45deg);
   }
 
   #menuToggler.is-active span:nth-child(2){
@@ -314,11 +431,14 @@ p{
   }
 
   #menuToggler.is-active span:nth-child(3){
-    transform: translateY(-3vw) rotate(-45deg);
+    -webkit-transform: translateY(-3vw) rotate(-45deg);
+        -ms-transform: translateY(-3vw) rotate(-45deg);
+            transform: translateY(-3vw) rotate(-45deg);
   }
 
   .menu-bg{
-    filter: drop-shadow(#323232 0px 0px 300px);
+    -webkit-filter: drop-shadow(#323232 0px 0px 300px);
+            filter: drop-shadow(#323232 0px 0px 300px);
   }
 
   #cover{

@@ -411,12 +411,12 @@ function subtitle() {
   translate(0,0,-500);
   var text1 = "FROM ABSTRACTNESS\nTO CONCRETENESS";
   if (window.innerHeight > window.innerWidth) {
-    var text2 = "EXPERIENTIAL KNOWLEDGE\nAND ROLE OF PROTOTYPES\nIN DESIGN RESEARCH";
-    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE");
+    var text2 = "EXPERIENTIAL KNOWLEDGE\nAND THE ROLE OF PROTOTYPES\nIN DESIGN RESEARCH";
+    var text2Width = textWidth("AND THE ROLE OF PROTOTYPES");
     var height2 = 5*rem + padding;
   }else {
-    var text2 = "EXPERIENTIAL KNOWLEDGE AND ROLE\nOF PROTOTYPES IN DESIGN RESEARCH";
-    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE AND ROLE");
+    var text2 = "EXPERIENTIAL KNOWLEDGE AND THE ROLE\n OF PROTOTYPES IN DESIGN RESEARCH";
+    var text2Width = textWidth("EXPERIENTIAL KNOWLEDGE AND THE ROLE") + 10;
     var height2 = 4*rem + padding*2;
   }
   var text1Width = textWidth("FROM ABSTRACTNESS");
